@@ -10,19 +10,42 @@ body {
   font-family: 'Montserrat', sans-serif;
   line-height: 1.6;
   color: #fff;
+  padding: 1rem;
+  min-height: 100vh;
+  background: #000;
+  overflow-x: hidden;
+}
+
+input {
+  color: inherit;
+}
+
+.button {
+  cursor: pointer;
+  border: 1px solid #ccc;
+  padding: 1rem;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: .5s all ease;
+}
+
+.button:hover {
+  background: #fff;
+  color: #333;
 }
 
 /* Container */
 .container {
-  min-height: 100vh;
   display: grid;
+  grid-template: 100px 5fr 100px / minmax(200px, 1fr) 5fr;
   grid-template-areas: 
   'aside header header'
   'aside main main'
   'aside footer footer';
-  grid-template-columns: minmax(150px, 0.25fr) 2fr;
-  grid-template-rows: 1fr 5fr 1fr;
   background: #333;
+  border-radius: 25px;
 }
 
 header {
@@ -30,7 +53,6 @@ header {
   grid-template-columns: 1fr 3fr;
   align-items: center;
   grid-area: header;
-  padding: 1rem;
 }
 
 header nav {
@@ -40,44 +62,154 @@ header nav {
   gap: 1rem;
 }
 
+header nav > * {
+  height: 50px;
+}
+
 nav .search-box {
   display: flex;
   align-items: center;
   gap: 1rem;
   justify-content: flex-end;
-  width: 50px;
   transition: .5s all ease;
-}
-
-nav .search-box.open {
-  width: 200px;
-}
-
-nav .search-box.open input {
-  display: block;
-  opacity: 1;
-  width: 100%;
 }
 
 .search-box label {
   cursor: pointer;
+  opacity: .8;
+  transition: .5s all ease;
+}
+
+.search-box label:hover {
+  opacity: 1;
+}
+
+.search-box .input-wrapper {
+  position: relative;
+  justify-self: flex-end;
+  width: 0;
+  opacity: 0;
+  transition: .5s all ease;
+}
+
+nav .search-box.open .input-wrapper {
+  opacity: 1;
+  width: 100%;
+}
+
+.search-box .input-wrapper::before {
+  position: absolute;
+  content: '';
+  bottom: -5px;
+  width: 100%;
+  height: 1px;
+  background-color: #ccc;
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: .25s all .25s ease;
+}
+
+.search-box.open .input-wrapper::before {
+  transform: scaleX(1);
 }
 
 .search-box input {
   background: inherit;
   border: none;
   outline: none;
-  color: #fff;
-  width: 0;
-  transform-origin: right;
-  transition: .5s all ease;
-  /* padding: .5rem 1rem; */
   opacity: 0;
+  transition: .5s all ease;
+}
+
+.search-box.open input {
+  opacity: 1;
+}
+
+.notifications {
+  border: none;
+}
+
+.notifications:hover {
+  color: #FFD700;
+  background: transparent;
 }
 
 aside {
+  display: grid;
+  grid-template-rows: calc(200px - 2rem) 1fr;
   grid-area: aside;
-  border-right: 1px solid #aaa;
+  border-right: 1px solid #555;
+  gap: 1rem;
+}
+
+aside .profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+aside .profile .photo {
+  overflow: hidden;
+  width: 100px;
+  flex-basis: 100px;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+}
+
+aside .profile .photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+aside .profile .username {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+aside .profile .username .edit-profile {
+  position: absolute;
+  right: 0;
+  top: 0;
+  visibility: hidden;
+  cursor: pointer;
+}
+
+aside .profile .username:hover .edit-profile {
+  visibility: visible;
+}
+
+aside nav {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 2rem;
+}
+
+aside nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  justify-content: center;
+}
+
+aside nav ul > i {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  padding: 10px 1rem;
+  gap: 1rem;
+  cursor: pointer;
+  font-style: normal;
+  transition: .3s all ease-in-out;
+}
+
+aside nav ul > i.active {
+  background: #555;
 }
 
 main {
@@ -86,8 +218,19 @@ main {
 
 footer {
   grid-area: footer;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+footer .socials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
 }
 
 .container > * {
-  /* border: 1px solid #ccc; */
+  padding: 1rem;
 }

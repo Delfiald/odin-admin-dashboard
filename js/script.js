@@ -1,9 +1,32 @@
 const searchBox = document.querySelector('.search-box');
+const searchInput = document.getElementById('search');
+const aside = document.querySelector('aside');
 
-searchBox.addEventListener('click', (e) => {
-  const label = e.target.closest('#search-icon');
+const asideNav = document.querySelectorAll('aside i');
 
-  if(label) {
-    searchBox.classList.toggle('open');
+document.addEventListener('click', (e) => {
+  const insideSearchBox = e.target.closest('.search-box');
+
+  if(insideSearchBox) {
+    if(e.target.closest('#search-icon')) {
+      if(searchInput.value === ''){
+        searchBox.classList.toggle('open');
+      }
+    }
+  }else{
+    if(searchInput.value === ''){
+      searchBox.classList.remove('open');
+    }
+  }
+
+  if(e.target.closest('aside i')) {
+    asideNav.forEach((item) => {
+      item.classList.remove('active');
+    });
+
+    const navButton = e.target;
+    console.log(navButton);
+    
+    navButton.classList.add('active');
   }
 })
