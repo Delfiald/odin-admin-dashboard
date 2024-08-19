@@ -4,13 +4,34 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Odin Admin Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header>
-    <div class="hero">Admin Dashboard</div>
-  </header>
-
+  <div class="container">
+    <header>
+      <div class="section-text">
+        <h2>Dashboard</h2>
+      </div>
+      <nav>
+        <div class="search-box">
+          <label for="search" id="search-icon">
+            <i class="fas fa-search"></i>
+          </label>
+          <input type="text" name="search" id="search" placeholder="Search Something....">
+        </div>
+        <div class="about-button">
+          <h2>About</h2>
+        </div>
+        <div class="notifications">
+          <i class="fas fa-bell"></i>
+        </div>
+      </nav>
+    </header>
+    <aside></aside>
+    <main></main>
+    <footer></footer>
+  </div>
   <script src="js/script.js"></script>
 </body>
 </html>
