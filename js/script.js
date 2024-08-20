@@ -4,6 +4,8 @@ const aside = document.querySelector('aside');
 
 const asideNav = document.querySelectorAll('aside i');
 
+const asideNavContainer = document.querySelectorAll('aside ul');
+
 document.addEventListener('click', (e) => {
   const insideSearchBox = e.target.closest('.search-box');
 
@@ -19,14 +21,31 @@ document.addEventListener('click', (e) => {
     }
   }
 
-  if(e.target.closest('aside i')) {
+  if(e.target.closest('aside .top i')) {
+    e.preventDefault();
     asideNav.forEach((item) => {
       item.classList.remove('active');
     });
 
-    const navButton = e.target;
-    console.log(navButton);
+    let outerI = e.target;
+
+    while(outerI.parentElement && outerI.parentElement.tagName === 'I') {
+      outerI = outerI.parentElement;
+    }
     
-    navButton.classList.add('active');
+    let parent = outerI.parentElement;
+
+    let rectElement = outerI.getBoundingClientRect();
+    let rectParent = parent.getBoundingClientRect();
+
+    let top = rectElement.top - rectParent.top;
+
+    const style = asideNavContainer[0];
+
+    style.style.setProperty('--_background-pos', `${top}px`);
+
+    console.log(top);
+    
+    outerI.classList.add('active');
   }
 })
