@@ -100,8 +100,9 @@ header nav > * {
 
 .option-panel-wrapper {
   grid-column: span 2;
-  overflow: hidden;
   border-radius: 25px;
+  z-index: 2;
+  overflow: hidden;
 }
 
 header .option-panel {
@@ -259,7 +260,6 @@ aside {
   grid-area: aside;
   border-right: 1px solid #4E4F4F;
   gap: 1rem;
-  /* margin-right: 2rem; */
 }
 
 aside .profile {
@@ -307,6 +307,9 @@ aside nav {
   display: grid;
   grid-template-rows: auto 1fr;
   gap: 2rem;
+  position: sticky;
+  top: 1rem;
+  align-self: start;
 }
 
 aside nav ul {
@@ -423,6 +426,25 @@ main .main-section > .box-1 .content-wrapper:hover {
   transform: translateY(-7.5px);
 }
 
+main .main-section > .box-1 .adding-content .content-wrapper {
+  display: grid;
+  grid-template: auto / auto;
+  justify-content: center;
+  align-items: center;
+  border: 2px dashed #ccc;
+  cursor: pointer;
+  background: transparent;
+}
+
+main .main-section > .box-1 .adding-content .content-wrapper:hover {
+  transform: none;
+  background: #555;
+}
+
+main .main-section > .box-1 .adding-content::before {
+  display: none;
+}
+
 main .main-section > .box-1 > div .button {
   padding: 5px;
   border-radius: 50%;
@@ -443,14 +465,88 @@ main .main-section > .box-2 {
 }
 
 main .side-section {
-  display: grid;
   gap: 1rem;
-  grid-template-rows: auto;
+  display: grid;
+  grid-template-rows: auto 1fr auto auto;
 }
 
 main .side-section > div {
+  display: grid;
   background: #34373C;
   border-radius: 20px;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+main .side-section > div .button {
+  font-weight: bold;
+}
+
+main .side-section > div > h2 {
+  border-bottom: 1px solid #ccc;
+}
+
+main .side-section .box-1 {
+  grid-template-columns: auto;
+}
+
+main .side-section .box-1 .side-section-contents {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 1rem;
+}
+
+main .side-section .box-1 .side-content-wrapper {
+  display: grid;
+  grid-template: auto auto auto / auto;
+  gap: .5rem;
+  background: #f4f4f4;
+  color: #333;
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: .5s all ease-in-out;
+}
+
+main .side-section .box-1 .side-content-wrapper:hover {
+  opacity: .7;
+}
+
+main .side-section .box-1 .side-content-text {
+  background: #22c55e;
+  color: #fff;
+  border-radius: 10px;
+}
+
+main .side-section .box-2 .side-content-wrapper {
+  display: grid;
+  grid-auto-rows: auto;
+  background: #f4f4f4;
+  padding: 1rem;
+  color: #333;
+  border-radius: 10px;
+  gap: 1rem;
+}
+
+main .side-section .box-2 .photo {
+  width: 100%;
+  height: 100%;
+}
+
+main .side-section .box-2 .photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  overflow: hidden;
+}
+
+main .side-section .box-2 .button:hover {
+  border: 1px solid #333;
+}
+
+main .side-section .box-3 {
+  grid-auto-rows: auto;
 }
 
 footer {
