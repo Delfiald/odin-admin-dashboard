@@ -6,7 +6,8 @@ const asideNav = document.querySelectorAll('aside i');
 
 const asideNavContainer = document.querySelectorAll('aside ul');
 
-const notifications = document.querySelectorAll('.notifications');
+const notifications = document.querySelectorAll('aside .notifications');
+const revenues = document.querySelectorAll('.side-section .box-1 .side-content-text');
 
 document.addEventListener('click', (e) => {
   const insideSearchBox = e.target.closest('.search-box');
@@ -70,10 +71,19 @@ document.addEventListener('click', (e) => {
 })
 
 notifications.forEach((item) => {
-  console.log(parseInt(item.textContent));
   if(item.textContent > 25){
     item.classList.add('danger');
   }else if(item.textContent > 15){
     item.classList.add('warning');
+  }else {
+    item.classList.add('success');
+  }
+})
+
+revenues.forEach((item) => {
+  if(item.textContent.includes('-')) {
+    item.classList.add('danger');
+  }else {
+    item.classList.add('success');
   }
 })
