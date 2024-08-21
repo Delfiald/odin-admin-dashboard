@@ -50,6 +50,23 @@ document.addEventListener('click', (e) => {
     
     outerI.classList.add('active');
   }
+
+  const moreButton = e.target.closest('.more.button');
+  
+  if(moreButton){
+    console.log(moreButton);
+    const currentOption = moreButton.querySelector('.more-options');
+
+    document.querySelectorAll('.more-options').forEach((item) => {
+      item.classList.remove('show');
+    })
+
+    currentOption.classList.toggle('show');
+  }else {
+    document.querySelectorAll('.more-options').forEach((item) => {
+      item.classList.remove('show');
+    })
+  }
 })
 
 notifications.forEach((item) => {

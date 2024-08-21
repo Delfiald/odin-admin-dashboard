@@ -445,9 +445,47 @@ main .main-section > .box-1 .adding-content::before {
   display: none;
 }
 
-main .main-section > .box-1 > div .button {
+main .main-section > .box-1 > div .more {
+  position: relative;
   padding: 5px;
   border-radius: 50%;
+}
+
+main .main-section > .box-1 > div .more:hover .more-options {
+  color: #fff;
+}
+
+main .main-section > .box-1 .more-options {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: #333;
+  padding: 1rem;
+  border-radius: 10px;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  align-items: start;
+  justify-content: center;
+  transition: .5s all ease;
+}
+
+main .main-section > .box-1 .more-options > * {
+  flex: 1;
+  padding: .5rem;
+  width: 100%;
+}
+
+main .main-section > .box-1 .more-options > *:hover {
+  background: #555;
+}
+
+main .main-section > .box-1 .more-options.show {
+  opacity: .9;
+  visibility: visible;
 }
 
 main .main-section > .box-1 .content-time {
