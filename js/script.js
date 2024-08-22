@@ -71,12 +71,17 @@ document.addEventListener('click', (e) => {
     })
   }
 
-  const filterButton = e.target.closest('.filter');
+  const filterButton = e.target.closest('.filter .fas');
 
   if(filterButton){
-    filterButton.classList.toggle('show');
+    const parentElement = filterButton.parentElement;
+    if(e.target === filterButton){
+      parentElement.classList.toggle('show');
+    }
   }else {
-    document.querySelector('.filter').classList.remove('show');
+    if(!e.target.closest('.filter')){
+      document.querySelector('.filter').classList.remove('show');
+    }
   }
 
   if(e.target.closest('.sort')) {
