@@ -8,6 +8,9 @@ const asideNavContainer = document.querySelectorAll('aside ul');
 
 const notifications = document.querySelectorAll('aside .notifications');
 const revenues = document.querySelectorAll('.side-section .box-1 .side-content-text');
+const chartBar = document.querySelectorAll('.bar-chart .content .bar');
+
+const sort = document.querySelector('.sort');
 
 document.addEventListener('click', (e) => {
   const insideSearchBox = e.target.closest('.search-box');
@@ -55,7 +58,6 @@ document.addEventListener('click', (e) => {
   const moreButton = e.target.closest('.more.button');
   
   if(moreButton){
-    console.log(moreButton);
     const currentOption = moreButton.querySelector('.more-options');
 
     document.querySelectorAll('.more-options').forEach((item) => {
@@ -67,6 +69,27 @@ document.addEventListener('click', (e) => {
     document.querySelectorAll('.more-options').forEach((item) => {
       item.classList.remove('show');
     })
+  }
+
+  const filterButton = e.target.closest('.filter');
+
+  if(filterButton){
+    filterButton.classList.toggle('show');
+  }else {
+    document.querySelector('.filter').classList.remove('show');
+  }
+
+  if(e.target.closest('.sort')) {
+    sort.classList.toggle('ascend');
+    sort.classList.toggle('descend');
+  }
+
+  const playerStatus = e.target.closest('.main-section .box-3 .content-highlight')
+  if(playerStatus) {
+    const currentParent = playerStatus.parentElement;
+    console.log(currentParent);
+
+    currentParent.classList.toggle('open');
   }
 })
 
@@ -86,4 +109,10 @@ revenues.forEach((item) => {
   }else {
     item.classList.add('success');
   }
+})
+
+chartBar.forEach((bar) => {
+  const dataValue = bar.getAttribute('data-value')
+  bar.style.height = dataValue;
+  bar.style.setProperty('--_data-value', `"${dataValue}"`);
 })
