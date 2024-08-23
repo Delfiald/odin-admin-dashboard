@@ -76,6 +76,7 @@ a {
 
 /* Container */
 .container {
+  position: relative;
   display: grid;
   grid-template: auto 5fr 75px / min(250px, 1fr) 5fr;
   grid-template-areas: 
@@ -84,6 +85,7 @@ a {
   'aside footer footer';
   background: #242529;
   border-radius: 25px;
+  min-height: 100%;
 }
 
 header {
@@ -92,6 +94,15 @@ header {
   align-items: center;
   grid-area: header;
   gap: 1rem;
+}
+
+header .section-text {
+  display: flex;
+  gap: 1rem;
+}
+
+header .section-text .sidebar-toggler {
+  display: none;
 }
 
 header nav {
@@ -263,11 +274,22 @@ header .notifications:hover {
 }
 
 aside {
+  position: relative;
   display: grid;
   grid-template-rows: calc(200px - 2rem) 1fr;
   grid-area: aside;
   border-right: 1px solid #4E4F4F;
   gap: 1rem;
+}
+
+aside .close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 20px;
+  height: 20px;
+  border: none;
+  display: none;
 }
 
 aside .profile {
@@ -318,6 +340,7 @@ aside nav {
   position: sticky;
   top: 1rem;
   align-self: start;
+  height: calc(100vh - 2rem);
 }
 
 aside nav ul {
@@ -343,7 +366,7 @@ aside nav ul.top::before {
   transition: .5s all ease;
 }
 
-aside nav ul > i {
+aside nav ul > li {
   display: flex;
   align-items: center;
   border-radius: 5px;
@@ -356,15 +379,15 @@ aside nav ul > i {
   border: 1px solid transparent;
 }
 
-aside nav ul > i:hover {
+aside nav ul > li:hover {
   border: 1px solid #555;
 }
 
-aside nav ul > i .nav-text {
+aside nav ul > li .nav-text {
   flex: 1;
 }
 
-aside nav ul > i .notifications {
+aside nav ul > li .notifications {
   font-weight: bold;
   font-size: .75rem;
   background: #22c55e;
@@ -375,6 +398,16 @@ aside nav ul > i .notifications {
 
 aside nav ul.bottom {
   align-self: start;
+}
+
+aside nav .close-2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  align-self: flex-end;
+  margin: 1rem;
+  display: none;
 }
 
 main {
@@ -509,7 +542,8 @@ main .main-section > .box-1 .content-time {
 main .main-section > .box-2 {
   background: #34373C;
   grid-template-rows: repeat(2, auto);
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(285px, 1fr));
+  grid-auto-flow: dense;
   padding: 1rem;
   gap: 2rem 1rem;
   justify-content: center;
@@ -1261,14 +1295,17 @@ footer .socials {
 
 @media (max-width: 1300px) {
   main .main-section > .box-2 {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: minmax(250px, 1fr);
+    gap: 1rem !important;
   }
 
   main .main-section > .box-2 > section.diagram-bar-wrapper {
     grid-column: span 1;
-    grid-row-start: 3;
+    grid-row: 3;
   }
+}
 
+@media (max-width: 1200px) {
   main .main-section > .box-2 .bar-chart {
     display: grid;
     grid-template-columns: min-content minmax(50px, 1fr);
@@ -1286,5 +1323,44 @@ footer .socials {
 
   table, th, td {
     padding: 10px 5px;
+  }
+}
+
+@media (max-width: 900px) {
+  .sidebar-toggler {
+    display: block !important;
+    cursor: pointer;
+  }
+
+  aside {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    left: -100%;
+    height: 100%;
+    transition: .3s all ease;
+    transform-origin: left;
+    transform: scaleX(0);
+  }
+
+  aside.open {
+    transform: scaleX(1);
+    left: initial;
+    opacity: 1;
+    visibility: visible;
+    background: #242529;
+    z-index: 4;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+  }
+
+  aside .close {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+
+  aside nav .close-2.show {
+    display: flex !important;
   }
 }

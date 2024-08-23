@@ -27,7 +27,7 @@ document.addEventListener('click', (e) => {
     }
   }
 
-  if(e.target.closest('aside .top i')) {
+  if(e.target.closest('aside .top li')) {
     e.preventDefault();
     asideNav.forEach((item) => {
       item.classList.remove('active');
@@ -35,7 +35,7 @@ document.addEventListener('click', (e) => {
 
     let outerI = e.target;
 
-    while(outerI.parentElement && outerI.parentElement.tagName === 'I') {
+    while(outerI.parentElement && outerI.parentElement.tagName === 'LI') {
       outerI = outerI.parentElement;
     }
     
@@ -96,6 +96,20 @@ document.addEventListener('click', (e) => {
 
     currentParent.classList.toggle('open');
   }
+
+  const sidebar = e.target.closest('.sidebar-toggler');
+  const sidebarClose = e.target.closest('aside .close');
+  const sidebarClose2 = e.target.closest('aside .close-2');
+
+  if(sidebar) {
+    const aside = document.querySelector('aside');
+
+    aside.classList.add('open');
+  }else if(sidebarClose || sidebarClose2) {
+    const aside = document.querySelector('aside');
+
+    aside.classList.remove('open');
+  }
 })
 
 notifications.forEach((item) => {
@@ -120,4 +134,26 @@ chartBar.forEach((bar) => {
   const dataValue = bar.getAttribute('data-value')
   bar.style.height = dataValue;
   bar.style.setProperty('--_data-value', `"${dataValue}"`);
+})
+
+function isElementOutOfViewport(el) {
+  const rect = el.getBoundingClientRect();
+  
+  return (
+      rect.top >= (window.innerHeight || document.documentElement.clientHeight) || 
+      rect.left >= (window.innerWidth || document.documentElement.clientWidth) ||
+      rect.bottom <= 0 || 
+      rect.right <= 0
+  );
+}
+
+const close = document.querySelector('aside .close');
+const close2 = document.querySelector('aside .close-2');
+
+document.addEventListener('scroll', (e) => {
+  if(isElementOutOfViewport(close)){
+    close2.classList.add('show');
+  }else {
+    close2.classList.remove('show');
+  }
 })
