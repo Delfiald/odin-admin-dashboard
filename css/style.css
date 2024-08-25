@@ -259,16 +259,25 @@ header .search-box.open input {
   visibility: visible;
 }
 
+/* Header Nav Notifications */
+header .notifications {
+  position: relative;
+  z-index: 3;
+}
+
 header .notifications:hover {
   color: var(--yellow-400-color);
   background: transparent;
-  transform: scale(1.05);
   outline: 1px solid var(--yellow-400-color);
 }
 
-/* Header Nav Notifications */
+header .notifications:hover i {
+  transform: scale(1.15);
+}
+
 header .notifications i { 
   position: relative;
+  transition: .5s transform ease;
 }
 
 header .notifications:hover .notifications-number {
@@ -289,6 +298,40 @@ header .notifications .notifications-number {
   align-items: center;
   justify-content: center;
   transition: var(--transition);
+}
+
+header .notifications .notifications-wrapper {
+  position: absolute;
+  top: 90%;
+  right: 90%;
+  border: 1px solid var(--light-600-color);
+  padding: 1rem;
+  font-size: .8rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: var(--dark-300-color);
+  gap: .5rem;
+  min-width: 200px;
+  border-radius: 5px;
+  color: #fff;
+  opacity: 0;
+  visibility: hidden;
+}
+
+header .notifications.show .notifications-wrapper {
+  opacity: 1;
+  visibility: visible;
+}
+
+header .notifications .notifications-wrapper > * {
+  border-bottom: 1px solid var(--light-600-color);
+  padding: 5px;
+}
+
+header .notifications .notifications-wrapper > *:hover {
+  background: var(--grey-600-color);
+  color: var(--light-200-color);
 }
 
 /* Header Options Panel */

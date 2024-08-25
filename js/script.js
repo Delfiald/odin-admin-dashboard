@@ -10,6 +10,8 @@ const notifications = document.querySelectorAll('aside .notifications');
 const revenues = document.querySelectorAll('.side-section .box-1 .side-content-text');
 const chartBar = document.querySelectorAll('.bar-chart .content .bar');
 
+const headerNotification = document.querySelector('header .notifications')
+
 const sort = document.querySelector('.sort');
 
 const close = document.querySelector('aside .close');
@@ -59,6 +61,11 @@ const searchBarToggler = (e) => {
       searchBox.classList.toggle('open');
     }
   }
+}
+
+// Toggle Header Notifications
+const toggleHeaderNotif = () => {
+  headerNotification.classList.add('show');
 }
 
 // Activate Sidebar Item
@@ -142,6 +149,7 @@ const handleScroll = () => {
 // Event Listeners
 document.addEventListener('click', (e) => {
   const insideSearchBox = e.target.closest('.search-box');
+  const headerNotificationBtn = e.target.closest('header .notifications');
   const moreButton = e.target.closest('.more.button');
   const filterButton = e.target.closest('.filter .fas');
   const playerStatus = e.target.closest('.main-section .box-3 .content-highlight');
@@ -152,6 +160,12 @@ document.addEventListener('click', (e) => {
     if(searchInput.value === ''){
       searchBox.classList.remove('open');
     }
+  }
+
+  if(headerNotificationBtn) {
+    toggleHeaderNotif();
+  }else{
+    headerNotification.classList.remove('show');
   }
 
   if(e.target.closest('aside .top li')) activateAsideItem(e);
