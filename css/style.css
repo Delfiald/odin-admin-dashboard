@@ -173,7 +173,6 @@ header {
   align-items: center;
   grid-area: header;
   gap: 1rem;
-  overflow: hidden;
 }
 
 /* Header Text */
@@ -206,6 +205,11 @@ header nav .search-box {
   gap: 1rem;
   justify-content: flex-end;
   transition: var(--transition);
+  overflow-x: hidden;
+}
+
+header nav .search-box.open {
+  overflow-x: visible;
 }
 
 header .search-box label {
