@@ -125,7 +125,7 @@
               <div class="content-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, at numquam? Placeat inventore facere magnam, commodi quasi veniam soluta. Cupiditate assumenda minus ullam sequi animi ea iusto fugiat commodi! Quaerat.</div>
               <div class="content-time">
                 <i class="fas fa-history"></i>
-                52 Sec
+                <div class="time">52 Sec</div>
               </div>
             </div>
           </div>
@@ -142,7 +142,7 @@
               <div class="content-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto qui dignissimos consequuntur natus sequi minima ducimus quos veniam voluptatem eius!</div>
               <div class="content-time">
                 <i class="fas fa-history"></i>
-                1 Hour
+                <div class="time">1 Hour</div>
               </div>
             </div>
           </div>
@@ -159,7 +159,24 @@
               <div class="content-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto qui dignissimos consequuntur natus sequi minima ducimus quos veniam voluptatem eius!</div>
               <div class="content-time">
                 <i class="fas fa-history"></i>
-                1.5 Hour
+                <div class="time">1.5 Hour</div>
+              </div>
+            </div>
+          </div>
+          <div class="content-4">
+            <div class="content-wrapper">
+              <div class="content-hero"><h3>Title</h3></div>
+              <div class="more button">
+                <i class="fas fa-ellipsis-vertical"></i>
+                <div class="more-options">
+                  <div class="edit">Edit</div>
+                  <div class="delete">Remove</div>
+                </div>
+              </div>
+              <div class="content-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto qui dignissimos consequuntur natus sequi minima ducimus quos veniam voluptatem eius!</div>
+              <div class="content-time">
+                <i class="fas fa-history"></i>
+                <div class="time">1.5 Hour</div>
               </div>
             </div>
           </div>
@@ -175,16 +192,17 @@
           <section class="diagram-circle-wrapper">
             <div class="circle-header"><h2>Title</h2></div>
             <div class="circle-wrapper">
-              <div class="outer-circle">
+              <div class="outer-circle" data-value="80%">
               </div>
-              <div class="middle-circle">
+              <div class="middle-circle" data-value="20%">
               </div>
               <div class="inner-circle">
                 <h1>Things</h1>
               </div>
+              <div class="percentage">70%</div>
             </div>
             <div class="circle-footer">
-              <div class="">
+              <div class="hovered">
                 <div class="explain" data-value="80%"></div>
                 things 80%
               </div>
@@ -661,11 +679,28 @@
     </main>
     <footer>
       <div class="socials">
-        <a href=""><i class="fab fa-github"></i></a>
+        <a href="https://github.com/Delfiald" target="_blank" ref="noreferrer noopener"><i class="fab fa-github"></i></a>
         <a href=""><i class="fab fa-linkedin"></i></a>
       </div>
     </footer>
   </div>
+
+  <div class="adding-main-box-1-content">
+    <div class="input-container">
+        <div class="close"><i class="fas fa-x"></i></div>
+        <div class="input title">
+          <label for="title">Title</label>
+          <input name="title" id="title" type="text" autocomplete="off" required placeholder="Insert Title">
+        </div>
+        <div class="input text">
+          <label for="text">Text</label>
+          <textarea name="text" id="text" placeholder="Typing Here.."></textarea>
+        </div>
+        <button class="submit-content button" type="button">Submit</button>
+      </form>
+    </div>
+  </div>
+
   <script src="js/script.js"></script>
 </body>
 </html>

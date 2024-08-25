@@ -1,25 +1,28 @@
 const searchBox = document.querySelector('.search-box');
 const searchInput = document.getElementById('search');
 const aside = document.querySelector('aside');
-
 const asideNav = document.querySelectorAll('aside i');
-
 const asideNavContainer = document.querySelectorAll('aside ul');
-
 const notifications = document.querySelectorAll('aside .notifications');
 const revenues = document.querySelectorAll('.side-section .box-1 .side-content-text');
 const chartBar = document.querySelectorAll('.bar-chart .content .bar');
-
 const headerNotification = document.querySelector('header .notifications')
-
 const sort = document.querySelector('.sort');
-
 const close = document.querySelector('aside .close');
 const close2 = document.querySelector('aside .close-2');
-
-const moreOptions = document.querySelectorAll('.more-options');
-
 const filter = document.querySelector('.filter');
+const circleWrapper = document.querySelector('.circle-wrapper')
+const circleChartOuter = circleWrapper.querySelector('.outer-circle');
+const percentage = circleWrapper.querySelector('.percentage');
+const circleChartInner = circleWrapper.querySelector('.middle-circle')
+const mainContent = document.querySelector('.main-section');
+let hoverTime;
+const addingContent = document.querySelector('.adding-main-box-1-content');
+const submitContent = document.querySelector('.submit-content');
+const inputContainer = document.querySelector('.input-container');
+const title = inputContainer.querySelector('#title');
+const text = inputContainer.querySelector('#text');
+let editingContent = null;
 
 // Notifications
 const initializeNotifications = () => {
@@ -91,12 +94,15 @@ const activateAsideItem = (e) => {
 // Toggle More Options
 const moreButtonToggler = (moreButton) => {
   const currentOption = moreButton.querySelector('.more-options');
+  const moreOptions = document.querySelectorAll('.more-options');
 
   moreOptions.forEach((item) => {
     item.classList.remove('show');
   })
 
   currentOption.classList.toggle('show');
+
+  console.log("heeha")
 }
 
 // Toggle Filter
@@ -146,13 +152,106 @@ const handleScroll = () => {
   }
 }
 
+// Circle Chart Hover Handler
+const getMousePos = (e) => {
+  const rect = circleChartOuter.getBoundingClientRect();
+  
+  const xPos = e.clientX - rect.left;
+  const yPos = e.clientY - rect.top;
+
+  return {xPos, yPos};
+}
+
+const showPercentage = (e) => {
+  const percentageValue = e.target.getAttribute('data-value');
+  const {xPos, yPos} = getMousePos(e);
+  
+  hoverTime = setTimeout(() => {
+    percentage.textContent = percentageValue;
+    percentage.classList.add('show');
+    percentage.style.top = `${yPos + 5}px`;
+    percentage.style.left = `${xPos + 5}px`;
+  }, 500)
+}
+
+const hidePercentage = (e) => {
+  clearTimeout(hoverTime);
+  percentage.classList.remove('show');
+}
+
+// CRUD Content on Main Box-1
+const checkValidity = () => {
+  if(!title.checkValidity()){
+    title.reportValidity();
+  }else{
+    cloneContent(title, text);
+  }
+}
+
+const cloneContent = (title, text) => {
+  const box1 = mainContent.querySelector('.box-1');
+
+  if(editingContent) {
+    editingContent.querySelector('.content-hero h3').textContent = title.value;
+    editingContent.querySelector('.content-text').textContent = text.value;
+    editingContent.querySelector('.time').textContent = '0s';
+    editingContent = null;
+  }else {
+    const originalContent = box1.querySelector('.content-1');
+
+    const clonedContent = originalContent.cloneNode(true);
+  
+    clonedContent.querySelector('.content-hero h3').textContent = title.value;
+    clonedContent.querySelector('.content-text').textContent = text.value;
+    clonedContent.querySelector('.time').textContent = '0s';
+  
+    box1.insertBefore(clonedContent, box1.firstChild);
+  }
+
+  addingContent.classList.remove('show');
+}
+
+const removeContent = (removeButton) => {
+  const contentParent = removeButton.closest('.main-section .box-1 > div');
+
+  if(contentParent) {
+    contentParent.remove();
+  }
+}
+
+const toggleAddingContent = () => {
+  addingContent.classList.add('show');
+  title.value = '';
+  text.value = '';
+}
+
+const editContent = (editButton) => {
+  addingContent.classList.add('show');
+
+  editingContent = editButton.closest('.main-section .box-1 > div');
+
+  const originalTitle = editingContent.querySelector('.content-hero h3').textContent;
+  const originalText = editingContent.querySelector('.content-text').textContent;
+
+  inputContainer.querySelector('#title').value = originalTitle;
+
+  inputContainer.querySelector('#text').value = originalText;
+}
+
 // Event Listeners
 document.addEventListener('click', (e) => {
   const insideSearchBox = e.target.closest('.search-box');
   const headerNotificationBtn = e.target.closest('header .notifications');
   const moreButton = e.target.closest('.more.button');
+  const removeButton = e.target.closest('.more .delete');
+  const editContentButton = e.target.closest('.more .edit');
   const filterButton = e.target.closest('.filter .fas');
   const playerStatus = e.target.closest('.main-section .box-3 .content-highlight');
+  const addingContentButton = e.target.closest('.adding-content');
+
+  const addingContentCloseButton = e.target.closest('.adding-main-box-1-content .close')
+
+  const submitContentButton = e.target.closest('.adding-main-box-1-content .submit-content')
 
   if(insideSearchBox) {
     searchBarToggler(e);
@@ -173,9 +272,31 @@ document.addEventListener('click', (e) => {
   if(moreButton){
     moreButtonToggler(moreButton);
   }else {
+    const moreOptions = document.querySelectorAll('.more-options');
+
     moreOptions.forEach((item) => {
       item.classList.remove('show');
     })
+  }
+
+  if(removeButton){
+    removeContent(removeButton);
+  }
+
+  if(editContentButton) {
+    editContent(editContentButton);
+  }
+
+  if(addingContentButton) {
+    toggleAddingContent();
+  }
+
+  if(addingContentCloseButton) {
+    addingContent.classList.remove('show');
+  }
+
+  if(submitContentButton) {
+    checkValidity();
   }
 
   if(filterButton){
@@ -196,6 +317,11 @@ document.addEventListener('click', (e) => {
 })
 
 document.addEventListener('scroll', handleScroll);
+
+[circleChartOuter, circleChartInner].forEach((element) => {
+  element.addEventListener('mouseenter', showPercentage);
+  element.addEventListener('mouseleave', hidePercentage);
+});
 
 // Initialize Components
 initializeNotifications();
