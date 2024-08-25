@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Odin Admin Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="section-text">
+        <div class="sidebar-toggler">
+          <i class="fas fa-bars fa-3x"></i>
+        </div>
+        <h1>Dashboard</h1>
+      </div>
+      <nav>
+        <div class="search-box">
+          <label for="search" id="search-icon">
+            <i class="fas fa-search"></i>
+          </label>
+          <div class="input-wrapper">
+            <input type="text" name="search" id="search" placeholder="Search Something....">
+          </div>
+        </div>
+        <div class="about-button button">
+          <h2>About</h2>
+        </div>
+        <div class="notifications button">
+          <i class="fas fa-bell">
+            <div class="notifications-number">4</div>
+          </i>
+          <div class="notifications-wrapper">
+            <div class="item">Lorem ipsum dolor sit amet.</div>
+            <div class="item">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+            <div class="item">Lorem, ipsum dolor.</div>
+          </div>
+        </div>
+      </nav>
+      <div class="option-panel-wrapper">
+        <div class="option-panel">
+          <div class="options-1">
+            <div class="option-pict">
+              <img src="assets/profile.jpeg" alt="">
+            </div>
+            <div class="option-text">option-1</div>
+            <div class="option-percentage">20%</div>
+          </div>
+          <div class="options-2">
+            <div class="option-pict">
+              <img src="assets/profile.jpeg" alt="">
+            </div>
+            <div class="option-text">option-2</div>
+            <div class="option-percentage">33.4%</div>
+          </div>
+          <div class="options-3">
+            <div class="option-pict">
+              <img src="assets/profile.jpeg" alt="">
+            </div>
+            <div class="option-text">option-3</div>
+            <div class="option-percentage">100%</div>
+          </div>
+        </div>
+      </div>
+      <div class="details">
+        <div class="details-button button">Details</div>
+      </div>
+    </header>
+    <aside>
+      <div class="close button">
+        <i class="fas fa-x"></i>
+      </div>
+      <div class="profile">
+        <div class="photo">
+          <img src="assets/profile.jpeg" alt="Profile Photo">
+        </div>
+        <div class="username">
+          <p>Doge</p>
+          <div class="edit-profile"><i class="fas fa-edit"></i></div>
+        </div>
+      </div>
+      <nav>
+        <ul class="top">
+          <li class="active"><i class="fas fa-home"></i><div class="nav-text">Home</div></li>
+          <li><i class="fas fa-address-card"></i><div class="nav-text">Profile</div></li>
+          <li>
+            <i class="fas fa-message"></i>
+            <div class="nav-text">Messages</div>
+            <div class="notifications">90</div>
+          </li>
+          <li><i class="fas fa-history"></i><div class="nav-text">History</div>
+          <div class="notifications">16</div></li>
+          <li>
+            <i class="fas fa-bars-progress"></i>
+            <div class="nav-text">Tasks</div>
+            <div class="notifications">5</div>
+          </li>
+          <li><i class="fas fa-people-group"></i><div class="nav-text">Communities</div></li>
+        </ul>
+        <ul class="bottom">
+          <li><i class="fas fa-gear"></i><div class="nav-text">Settings</div></li>
+          <li><i class="fas fa-circle-question"></i><div class="nav-text">Support</div></li>
+          <li><i class="fas fa-shield"></i><div class="nav-text">Privacy</div></li>
+        </ul>
+        <div class="close-2 button">
+          <i class="fas fa-x"></i><div class="nav-text">Close</div>
+        </div>
+      </nav>
+    </aside>
+    <main>
+      <section class="main-section">
+        <div class="box-1">
+          <div class="content-1">
+            <div class="content-wrapper">
+              <div class="content-hero"><h3>Title</h3></div>
+              <div class="more button">
+                <i class="fas fa-ellipsis-vertical"></i>
+                <div class="more-options">
+                  <div class="edit">Edit</div>
+                  <div class="delete">Remove</div>
+                </div>
+              </div>
+              <div class="content-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, at numquam? Placeat inventore facere magnam, commodi quasi veniam soluta. Cupiditate assumenda minus ullam sequi animi ea iusto fugiat commodi! Quaerat.</div>
+              <div class="content-time">
+                <i class="fas fa-history"></i>
+                <div class="time">52 Sec</div>
+              </div>
+            </div>
+          </div>
+          <div class="content-2">
+            <div class="content-wrapper">
+              <div class="content-hero"><h3>Title</h3></div>
+              <div class="more button">
+                <i class="fas fa-ellipsis-vertical"></i>
+                <div class="more-options">
+                  <div class="edit">Edit</div>
+                  <div class="delete">Remove</div>
+                </div>
+              </div>
+              <div class="content-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto qui dignissimos consequuntur natus sequi minima ducimus quos veniam voluptatem eius!</div>
+              <div class="content-time">
+                <i class="fas fa-history"></i>
+                <div class="time">1 Hour</div>
+              </div>
+            </div>
+          </div>
+          <div class="content-3">
+            <div class="content-wrapper">
+              <div class="content-hero"><h3>Title</h3></div>
+              <div class="more button">
+                <i class="fas fa-ellipsis-vertical"></i>
+                <div class="more-options">
+                  <div class="edit">Edit</div>
+                  <div class="delete">Remove</div>
+                </div>
+              </div>
+              <div class="content-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto qui dignissimos consequuntur natus sequi minima ducimus quos veniam voluptatem eius!</div>
+              <div class="content-time">
+                <i class="fas fa-history"></i>
+                <div class="time">1.5 Hour</div>
+              </div>
+            </div>
+          </div>
+          <div class="content-4">
+            <div class="content-wrapper">
+              <div class="content-hero"><h3>Title</h3></div>
+              <div class="more button">
+                <i class="fas fa-ellipsis-vertical"></i>
+                <div class="more-options">
+                  <div class="edit">Edit</div>
+                  <div class="delete">Remove</div>
+                </div>
+              </div>
+              <div class="content-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto qui dignissimos consequuntur natus sequi minima ducimus quos veniam voluptatem eius!</div>
+              <div class="content-time">
+                <i class="fas fa-history"></i>
+                <div class="time">1.5 Hour</div>
+              </div>
+            </div>
+          </div>
+          <div class="adding-content">
+            <div class="content-wrapper">
+              <div class="add-icon-wrapper">
+                <i class="fas fa-plus fa-5x"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="box-2">
+          <section class="diagram-circle-wrapper">
+            <div class="circle-header"><h2>Title</h2></div>
+            <div class="circle-wrapper">
+              <div class="outer-circle" data-value="80%">
+              </div>
+              <div class="middle-circle" data-value="20%">
+              </div>
+              <div class="inner-circle">
+                <h1>Things</h1>
+              </div>
+              <div class="percentage">70%</div>
+            </div>
+            <div class="circle-footer">
+              <div class="hovered">
+                <div class="explain" data-value="80%"></div>
+                things 80%
+              </div>
+              <div class="">
+                <div class="explain" data-value="20%"></div>
+                things 20%
+              </div>
+            </div>
+          </section>
+          <section class="table-wrapper">
+            <div class="table-header">
+              <h3>Table Things</h3>
+            </div>
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">Things</th>
+                  <th scope="col">Things</th>
+                  <th scope="col">Things</th>
+                  <th scope="col">Things</th>
+                  <th scope="col">Things</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td scope="row">Things</td>
+                  <td>Things</td>
+                  <td>Things</td>
+                  <td>Things</td>
+                  <td>Things</td>
+                </tr>
+                <tr>
+                  <td scope="row">Things</td>
+                  <td>Things</td>
+                  <td>Things</td>
+                  <td>Things</td>
+                  <td>Things</td>
+                </tr>
+                <tr>
+                  <td scope="row">Things</td>
+                  <td>Things</td>
+                  <td>Things</td>
+                  <td>Things</td>
+                  <td>Things</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+          <section class="diagram-bar-wrapper">
+            <div class="bar-chart-header">
+              Bar Chart
+            </div>
+            <div class="bar-chart">
+              <div class="grid-line">
+                <div class=""></div>
+                <div class=""></div>
+                <div class=""></div>
+                <div class=""></div>
+                <div class=""></div>
+                <div class=""></div>
+              </div>
+              <div class="y-axis">
+                <div class="">100%</div>
+                <div class="">80%</div>
+                <div class="">60%</div>
+                <div class="">40%</div>
+                <div class="">20%</div>
+                <div class="">0%</div>
+              </div>
+              <div class="content">
+                <div class="bar" data-value="20%"></div>
+                <div class="bar" data-value="40%"></div>
+                <div class="bar" data-value="35%"></div>
+                <div class="bar" data-value="100%"></div>
+              </div>
+              <div class="x-axis">
+                <div class="name">Name</div>
+                <div class="name">Name</div>
+                <div class="name">Name</div>
+                <div class="name">Name</div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="box-3">
+          <div class="options-bar">
+            <div class="sort ascend">
+              <i class="fas fa-arrow-down-wide-short"></i>
+              <i class="fas fa-arrow-up-wide-short"></i>
+            </div>
+            <div class="filter">
+              <i class="fas fa-filter"></i>
+              <div class="filter-list-container">
+                <div class="online-filter">Online</div>
+                <div class="offline-filter">Offline</div>
+              </div>
+            </div>
+          </div>
+          <div class="content-wrapper">
+            <div class="content-header">
+              <div>Username</div>
+              <div>Class</div>
+              <div>Level</div>
+              <div>Status</div>
+            </div>
+            <div class="content-1 open">
+              <div class="content-highlight">
+                <div class="title">Doge</div>
+                <div class="">Warrior</div>
+                <div class="">12</div>
+                <div class="status">
+                  <div class="status-icon online"></div>
+                  Online
+                </div>
+              </div>
+              <div class="content-body">
+                <div class="char-details">
+                  <div class="char-name">Doge</div>
+                  <div class="char-level">Lv. 12</div>
+                  <div class="char-class">Warrior</div>
+                </div>
+                <div class="char-stats">
+                  <div class="stats-header">
+                    <h3>Stats</h3>
+                  </div>
+                  <div class="stats-wrapper">
+                    <div class="strength">Strength: 10</div>
+                    <div class="agility">Agility: 2</div>
+                    <div class="intelligence">Intelligence: 1</div>
+                    <div class="endurance">Endurance: 9</div>
+                    <div class="luck">Luck: 0</div>
+                  </div>
+                </div>
+                <div class="char-pict">
+                  <img src="assets/profile.jpeg" alt="">
+                  <div class="char-title">CheeseEater</div>
+                </div>
+                <div class="char-options">
+                  <div class="edit">
+                    <i class="fas fa-edit"></i>
+                    Edit
+                  </div>
+                  <div class="delete">
+                    <i class="fas fa-x"></i>
+                    Delete
+                  </div>
+                </div>
+                <div class="char-achievement">
+                  <div class="char-achievement-header"><h3>Achievements</h3></div>
+                  <div><i class="fas fa-trophy gold"></i>Eats 100 Cheeses</div>
+                  <div><i class="fas fa-trophy silver"></i>Slay 5 Kittens</div>
+                </div>
+              </div>
+            </div>
+            <div class="content-2">
+              <div class="content-highlight">
+                <div class="title">Doge</div>
+                <div class="">Warrior</div>
+                <div class="">12</div>
+                <div class="status">
+                  <div class="status-icon online"></div>
+                  Online
+                </div>
+              </div>
+              <div class="content-body">
+                <div class="char-details">
+                  <div class="char-name">Doge</div>
+                  <div class="char-level">Lv. 12</div>
+                  <div class="char-class">Warrior</div>
+                </div>
+                <div class="char-stats">
+                  <div class="stats-header">
+                    <h3>Stats</h3>
+                  </div>
+                  <div class="stats-wrapper">
+                    <div class="strength">Strength: 10</div>
+                    <div class="agility">Agility: 2</div>
+                    <div class="intelligence">Intelligence: 1</div>
+                    <div class="endurance">Endurance: 9</div>
+                    <div class="luck">Luck: 0</div>
+                  </div>
+                </div>
+                <div class="char-pict">
+                  <img src="assets/profile.jpeg" alt="">
+                  <div class="char-title">CheeseEater</div>
+                </div>
+                <div class="char-options">
+                  <div class="edit">
+                    <i class="fas fa-edit"></i>
+                    Edit
+                  </div>
+                  <div class="delete">
+                    <i class="fas fa-x"></i>
+                    Delete
+                  </div>
+                </div>
+                <div class="char-achievement">
+                  <div class="char-achievement-header"><h3>Achievements</h3></div>
+                  <div><i class="fas fa-trophy gold"></i>Eats 100 Cheeses</div>
+                  <div><i class="fas fa-trophy silver"></i>Slay 5 Kittens</div>
+                </div>
+              </div>
+            </div>
+            <div class="content-3">
+              <div class="content-highlight">
+                <div class="title">Doge</div>
+                <div class="">Warrior</div>
+                <div class="">12</div>
+                  <div class="status">
+                  <div class="status-icon offline"></div>
+                  Offline
+                </div>
+              </div>
+              <div class="content-body">
+                <div class="char-details">
+                  <div class="char-name">Doge</div>
+                  <div class="char-level">Lv. 12</div>
+                  <div class="char-class">Warrior</div>
+                </div>
+                <div class="char-stats">
+                  <div class="stats-header">
+                    <h3>Stats</h3>
+                  </div>
+                  <div class="stats-wrapper">
+                    <div class="strength">Strength: 10</div>
+                    <div class="agility">Agility: 2</div>
+                    <div class="intelligence">Intelligence: 1</div>
+                    <div class="endurance">Endurance: 9</div>
+                    <div class="luck">Luck: 0</div>
+                  </div>
+                </div>
+                <div class="char-pict">
+                  <img src="assets/profile.jpeg" alt="">
+                  <div class="char-title">CheeseEater</div>
+                </div>
+                <div class="char-options">
+                  <div class="edit">
+                    <i class="fas fa-edit"></i>
+                    Edit
+                  </div>
+                  <div class="delete">
+                    <i class="fas fa-x"></i>
+                    Delete
+                  </div>
+                </div>
+                <div class="char-achievement">
+                  <div class="char-achievement-header"><h3>Achievements</h3></div>
+                  <div><i class="fas fa-trophy gold"></i>Eats 100 Cheeses</div>
+                  <div><i class="fas fa-trophy silver"></i>Slay 5 Kittens</div>
+                </div>
+              </div>
+            </div>
+            <div class="content-4">
+              <div class="content-highlight">
+                <div class="title">Doge</div>
+                <div class="">Warrior</div>
+                <div class="">12</div>
+                  <div class="status">
+                  <div class="status-icon online"></div>
+                  Online
+                </div>
+              </div>
+              <div class="content-body">
+                <div class="char-details">
+                  <div class="char-name">Doge</div>
+                  <div class="char-level">Lv. 12</div>
+                  <div class="char-class">Warrior</div>
+                </div>
+                <div class="char-stats">
+                  <div class="stats-header">
+                    <h3>Stats</h3>
+                  </div>
+                  <div class="stats-wrapper">
+                    <div class="strength">Strength: 10</div>
+                    <div class="agility">Agility: 2</div>
+                    <div class="intelligence">Intelligence: 1</div>
+                    <div class="endurance">Endurance: 9</div>
+                    <div class="luck">Luck: 0</div>
+                  </div>
+                </div>
+                <div class="char-pict">
+                  <img src="assets/profile.jpeg" alt="">
+                  <div class="char-title">CheeseEater</div>
+                </div>
+                <div class="char-options">
+                  <div class="edit">
+                    <i class="fas fa-edit"></i>
+                    Edit
+                  </div>
+                  <div class="delete">
+                    <i class="fas fa-x"></i>
+                    Delete
+                  </div>
+                </div>
+                <div class="char-achievement">
+                  <div class="char-achievement-header"><h3>Achievements</h3></div>
+                  <div><i class="fas fa-trophy gold"></i>Eats 100 Cheeses</div>
+                  <div><i class="fas fa-trophy silver"></i>Slay 5 Kittens</div>
+                </div>
+              </div>
+            </div>
+            <div class="content-5">
+              <div class="content-highlight">
+                <div class="title">Doge</div>
+                <div class="">Warrior</div>
+                <div class="">12</div>
+                  <div class="status">
+                  <div class="status-icon online"></div>
+                  Online
+                </div>
+              </div>
+              <div class="content-body">
+                <div class="char-details">
+                  <div class="char-name">Doge</div>
+                  <div class="char-level">Lv. 12</div>
+                  <div class="char-class">Warrior</div>
+                </div>
+                <div class="char-stats">
+                  <div class="stats-header">
+                    <h3>Stats</h3>
+                  </div>
+                  <div class="stats-wrapper">
+                    <div class="strength">Strength: 10</div>
+                    <div class="agility">Agility: 2</div>
+                    <div class="intelligence">Intelligence: 1</div>
+                    <div class="endurance">Endurance: 9</div>
+                    <div class="luck">Luck: 0</div>
+                  </div>
+                </div>
+                <div class="char-pict">
+                  <img src="assets/profile.jpeg" alt="">
+                  <div class="char-title">CheeseEater</div>
+                </div>
+                <div class="char-options">
+                  <div class="edit">
+                    <i class="fas fa-edit"></i>
+                    Edit
+                  </div>
+                  <div class="delete">
+                    <i class="fas fa-x"></i>
+                    Delete
+                  </div>
+                </div>
+                <div class="char-achievement">
+                  <div class="char-achievement-header"><h3>Achievements</h3></div>
+                  <div><i class="fas fa-trophy gold"></i>Eats 100 Cheeses</div>
+                  <div><i class="fas fa-trophy silver"></i>Slay 5 Kittens</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="pages">
+            <div class="before button">
+              <i class="fas fa-chevron-left"></i>
+              Previous
+            </div>
+            <div class="page-number">
+              <div>1</div>
+              <div>...</div>
+              <div class="active">3</div>
+              <div>4</div>
+              <div>5</div>
+            </div>
+            <div class="after button">
+              Next
+              <i class="fas fa-chevron-right"></i>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="side-section">
+        <div class="box-1">
+          <h2>Revenue</h2>
+          <div class="side-section-contents">
+            <article class="content-1">
+              <div class="side-content-wrapper">
+                <div class="side-content-title">
+                  <h3>Title</h3>
+                </div>
+                <div class="side-content-text">$28k</div>
+                <div class="side-content-footer">Things</div>
+              </div>
+            </article>
+            <article class="content-2">
+              <div class="side-content-wrapper">
+                <div class="side-content-title">
+                  <h3>Title</h3>
+                </div>
+                <div class="side-content-text">$4k</div>
+                <div class="side-content-footer">Things</div>
+              </div>
+            </article>
+            <article class="content-3">
+              <div class="side-content-wrapper">
+                <div class="side-content-title">
+                  <h3>Title</h3>
+                </div>
+                <div class="side-content-text">$8k</div>
+                <div class="side-content-footer">Things</div>
+              </div>
+            </article>
+            <article class="content-4">
+              <div class="side-content-wrapper">
+                <div class="side-content-title">
+                  <h3>Title</h3>
+                </div>
+                <div class="side-content-text">-$20k</div>
+                <div class="side-content-footer">Things</div>
+              </div>
+            </article>
+            <article class="content-5">
+              <div class="side-content-wrapper">
+                <div class="side-content-title">
+                  <h3>Title</h3>
+                </div>
+                <div class="side-content-text">-$5k</div>
+                <div class="side-content-footer">Things</div>
+              </div>
+            </article>
+          </div>
+          <div class="view-more button">View All</div>
+        </div>
+        <div class="box-2">
+          <h2>News</h2>
+          <article class="content-1">
+            <div class="side-content-wrapper">
+              <div class="photo">
+                <img src="assets/profile.jpeg" alt="Profile Photo">
+              </div>
+              <div class="trending-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit dicta et, maiores magni cumque atque blanditiis reiciendis odio consequuntur culpa.</div>
+              <div class="trending-read-more button">Read More</div>
+            </div>
+          </article>
+          <article class="content-2">
+            <div class="side-content-wrapper">
+              <div class="photo">
+                <img src="assets/profile.jpeg" alt="Profile Photo">
+              </div>
+              <div class="trending-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit dicta et, maiores magni cumque atque blanditiis reiciendis odio consequuntur culpa.</div>
+              <div class="trending-read-more button">Read More</div>
+            </div>
+          </article>
+          <article class="content-3">
+            <div class="side-content-wrapper">
+              <div class="photo">
+                <img src="assets/profile.jpeg" alt="Profile Photo">
+              </div>
+              <div class="trending-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, laborum?</div>
+              <div class="trending-read-more button">Read More</div>
+            </div>
+          </article>
+          <div class="view-more button">View All</div>
+        </div>
+        <div class="box-3">
+          <h2>Announcements</h2>
+          <article class="content-1">
+            <div class="side-content-wrapper">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora beatae error explicabo atque fuga expedita aliquam obcaecati corrupti sunt vitae.
+            </div>
+          </article>
+          <article class="content-2">
+            <div class="side-content-wrapper">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora beatae error explicabo atque fuga expedita aliquam obcaecati corrupti sunt vitae.
+            </div>
+          </article>
+          <article class="content-3">
+            <div class="side-content-wrapper">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora beatae error explicabo atque fuga expedita aliquam obcaecati corrupti sunt vitae.
+            </div>
+          </article>
+          <div class="view-more button">View All</div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="socials">
+        <a href="https://github.com/Delfiald" target="_blank" ref="noreferrer noopener"><i class="fab fa-github"></i></a>
+        <a href=""><i class="fab fa-linkedin"></i></a>
+      </div>
+    </footer>
+  </div>
+
+  <div class="adding-main-box-1-content">
+    <div class="input-container">
+        <div class="close"><i class="fas fa-x"></i></div>
+        <div class="input title">
+          <label for="title">Title</label>
+          <input name="title" id="title" type="text" autocomplete="off" required placeholder="Insert Title">
+        </div>
+        <div class="input text">
+          <label for="text">Text</label>
+          <textarea name="text" id="text" placeholder="Typing Here.."></textarea>
+        </div>
+        <button class="submit-content button" type="button">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
