@@ -139,6 +139,7 @@ const handleScroll = () => {
   }
 }
 
+// Event Listeners
 document.addEventListener('click', (e) => {
   const insideSearchBox = e.target.closest('.search-box');
   const moreButton = e.target.closest('.more.button');

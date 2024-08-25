@@ -1303,7 +1303,7 @@ main .main-section > .box-3 .pages .page-number > *.active {
 main .side-section {
   gap: 1rem;
   display: grid;
-  grid-template-rows: auto auto auto auto;
+  grid-template-rows: min-content min-content min-content;
 }
 
 main .side-section > div {
